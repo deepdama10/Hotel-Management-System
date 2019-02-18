@@ -10,7 +10,8 @@ To run the program, follow the steps given below.
 1)Install xamp/wamp etc
 2) download the given files
 3)import the database from the given files into phpmyadmin
-4)run index.php from the local host server
+4)run index.html from the local host server -for booking portal
+5) run mainpage.html from the local host server -for hotel staff
 
 
 

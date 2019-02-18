@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Admin Panel</title>
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css">
+	<link rel="stylesheet" type="text/css" href="mainpage-style.css">
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  	<script type="text/javascript" src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>  
+<script type="text/javascript" src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
+</head>
+<body>
+	<div class = "dashboard">
+		<span>Current Stats: Available - </span>
+		<span id = "booked"></span>
+		<span> Unavailable - </span>
+		<span id = "unbooked"></span>
+	</div>
+	<div id="chartContainer" style="height: 300px;"></div>
+	<br><br>
+	<span>The Busiest Month this year is - </span>
+	<span id = "busy_month"></span>
+	<span> - </span>
+	<span id = "busy_month_no"></span>
+	<span> bookings</span>
+	<br><br>
+	<span>The Busiest Quarter this year is - Quarter </span>
+	<span id = "busy_quarter"></span>
+	<span> - </span>
+	<span id = "busy_quarter_no"></span>
+	<span> bookings</span>
+	<br><br>
+	<span>The Busiest Year has been - </span>
+	<span id = "busy_year"></span>
+	<span> - </span>
+	<span id = "busy_year_no"></span>
+	<span> bookings</span>
+	<span>The Least Busy Month this year is - </span>
+	<span id = "least_busy_month"></span>
+	<span> - </span>
+	<span id = "least_busy_month_no"></span>
+	<span> bookings</span>
+	<br><br>
+	<span>The Least Busy Quarter this year is - Quarter </span>
+	<span id = "least_busy_quarter"></span>
+	<span> - </span>
+	<span id = "least_busy_quarter_no"></span>
+	<span> bookings</span>
+	<br><br>
+	<span>The Least Busy Year has been - </span>
+	<span id = "least_busy_year"></span>
+	<span> - </span>
+	<span id = "least_busy_year_no"></span>
+	<span> bookings</span>
+	<br><br><br><br>
+	<span id = "roomsList">View Room Allotments</span>
+	<script type="text/javascript">
+		$(function(){
+			$("#booked").text("90");
+			$("#unbooked").text("10");
+			$("#busy_month").text("February");
+			$("#busy_quarter").text("1");
+			$("#busy_year").text("2019");
+			$("#busy_month_no").text("150");
+			$("#busy_quarter_no").text("200");
+			$("#busy_year_no").text("409");
+			$("#least_busy_month").text("February");
+			$("#least_busy_quarter").text("1");
+			$("#least_busy_year").text("2019");
+			$("#least_busy_month_no").text("123");
+			$("least_#busy_quarter_no").text("41");
+			$("#least_busy_year_no").text("209");
+
+			$("#roomsList").click(function(){
+				window.open("roomsList.php",'_blank');
+			})
+		})
+
+	var options = {
+		title: {
+			text: "Rooms Booked this Month"
+		},
+		data: [{
+				type: "pie",
+				startAngle: -90,
+				showInLegend: "true",
+				legendText: "{label}",
+				indexLabel: "{label} ({y})",
+				yValueFormatString:"#,##0.#"%"",
+				dataPoints: [
+					{ label: "Standard", y: 40 },
+					{ label: "Deluxe", y: 35 },
+					{ label: "Executive", y: 25 },
+				]
+		}]
+	};
+	$("#chartContainer").CanvasJSChart(options);
+
+	</script>
+</body>
+</html>

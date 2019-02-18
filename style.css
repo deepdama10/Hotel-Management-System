@@ -1,0 +1,81 @@
+body{
+	background: #1a1a1a;
+	color: #e6e6e6;
+	font-size: 2.6vmin;
+	text-align: center;
+}
+
+h1{
+	font-weight: normal;
+	font-size: 6vmin;
+}
+
+h2{
+	font-size: 5vmin;
+}
+
+label, p{
+	font-size: 4vmin;
+}
+
+#ui-datepicker-div{
+	font-size: 3vmin;
+}
+
+input, select{
+	font-size: 3vmin;
+	border: 2px solid #fff;
+	border-radius: 1vmin;
+}
+
+option{
+	text-align: center;
+}
+
+/*input, sele{
+	border: 2px solid #fff;
+	border-radius: 1vmin;
+}*/
+
+option{
+	font-size: 2vmin;
+}
+
+ul{
+	list-style: none;
+	padding: 0;
+}
+
+li{
+	margin: 1%;
+}
+
+button{
+	font-size: 4vmin;
+	padding: 0.8% 3%;
+	border: 2px solid #fff;
+	border-radius: 2vmin;
+}
+
+.unavailable{
+	background: #fff;
+	color: #1a1a1a;
+	font-size: 3vmin;
+	border-radius: 2vmin;
+	padding: 2%;
+	position: fixed;
+	margin: auto;
+	width: 80%;
+	top: 10%;
+	left: 1%;
+	right: 1%;
+}
+
+.unavailable span{
+	position: fixed;
+	right: 11%;
+}
+
+.unavailable span:hover{
+	cursor: pointer;
+}

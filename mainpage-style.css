@@ -1,0 +1,31 @@
+body{
+	background: #fff;
+	color: #1a1a1a;
+	font-size: 2.7vmin;
+	width: 90%;
+	margin: auto;
+	text-align: center;
+}
+
+.dashboard{
+	background: #1a1a1a;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	color: #e6e6e6;
+	padding: 1% 3%;
+	text-align: center;
+}
+
+#chartContainer{
+	margin-top: 10vmin;
+	background: #000;
+}
+
+#roomsList {
+	border: 2px solid #ff7878;
+	background: #ff7878;
+	padding: 0.5% 2%;
+	text-align: center;
+}

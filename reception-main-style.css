@@ -1,0 +1,23 @@
+body{
+	background: #fff;
+	color: #1a1a1a;
+	font-size: 3vmin;
+	width: 90%;
+	margin: auto;
+	text-align: center;
+}
+
+#checkIn,
+#checkOut,
+#roomsList {
+	border: 2px solid #ff7878;
+	background: #ff7878;
+	padding: 0.5% 2%;
+	text-align: center;
+	width: 30%;
+	margin: auto;
+}
+
+input{
+	font-size: 2.5vmin;
+}

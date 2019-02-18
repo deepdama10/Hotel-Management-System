@@ -1,0 +1,50 @@
+body{
+	background: #1a1a1a;
+	color: #e6e6e6;
+	font-size: 2.7vmin;
+	width: 90%;
+	margin: auto;
+}
+
+.name{
+	display: flex;
+	flex-direction: row;
+}
+
+.name .child{
+	flex-basis: 50%;
+}
+
+.name .child input{
+	width: 80%;
+}
+
+input{	
+	background: transparent;
+	border: none;
+	border-bottom: 2px solid #cccccc;
+	color: #e6e6e6;
+	font-size: 2.6vmin;
+}
+
+span{
+	color: #cccccc;
+}
+
+button{
+	font-size: 4vmin;
+	padding: 0.8% 3%;
+	border: 2px solid #fff;
+	border-radius: 2vmin;
+	display: block;
+	margin: auto;
+	margin-top: 3%;
+}
+
+#confirm h3{
+	margin-bottom: 1%;
+}
+
+#confirm h5{
+	margin-top: 1%;
+}

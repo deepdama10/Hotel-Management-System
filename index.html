@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Booking Portal</title>
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+</head>
+<body>
+	<h1>Welcome to the Booking Portal</h1>
+	<br>
+	<form action="bookservice.php">
+	<p>Choose the dates on which you wish to stay:</p>
+	<label for="from">From</label>
+	<input type="text" id="from" name="from" autocomplete="off">
+	<label for="to">to</label>
+	<input type="text" id="to" name="to" autocomplete="off">
+	<br><br><br><br>
+	<label for = "type">Type of Room: </label>
+	<select name="type"id = "type">
+		<option name = "std">Standard</option>
+		<option name = "exec">Executive</option>
+		<option name = "deluxe">Deluxe</option>
+	</select>
+	<br><br>
+	<label>Cost: </label>
+	<label id = "cost">1000 Rs.</label>
+	<div class = "amenitites">
+		<h2>Amenities Offered</h2>
+		<ul>
+			<li class = "std exec deluxe">Air Conditioning</li>
+			<li class = "std exec deluxe">Television</li>
+			<li class = "std exec deluxe">Laundry</li>
+			<li class = "exec deluxe">Complementary Breakfast</li>
+			<li class = "exec deluxe">Bathtub</li>
+			<li class = "exec deluxe">Free WiFi</li>
+			<li class = "exec deluxe">Balcony</li>
+			<li class = "deluxe">Minibar</li>
+			<li class = "deluxe">Jacuzzi</li>
+			<li class = "deluxe">Netflix</li>
+			<li class = "deluxe">King Bed</li>
+		</ul>
+	</div>
+	<br>
+	<button type = "submit">GO!</button>
+	</form>
+	<div class = "unavailable">
+		<span id = "closeUnav">&#10006;</span>
+		<p>Sorry, we don't have any rooms avaialable for the dates selected by you!<br><br>We suggest you to check for other dates</p>
+	</div>
+	<script type="text/javascript">
+
+	function getQueryVariable(variable)
+	{
+	       var query = window.location.search.substring(1);
+	       var vars = query.split("&");
+	       for (var i=0;i<vars.length;i++) {
+	               var pair = vars[i].split("=");
+	               if(pair[0] == variable){return pair[1];}
+	       }
+	       return(false);
+	}
+
+	$( function() {
+
+		$(".unavailable").hide();
+
+		console.log(getQueryVariable("var"));
+
+		if (getQueryVariable("var") == -1) {
+			console.log("Not found");
+			$(".unavailable").slideDown(500);
+		}
+
+		else{
+			console.log("FOund");
+		}
+
+	    var dateFormat = "mm/dd/yy",
+	      from = $( "#from" )
+	        .datepicker({
+	          defaultDate: "+1w",
+	          changeMonth: true,
+	          minDate: +1
+	        })
+	        .on( "change", function() {
+	          to.datepicker( "option", "minDate", getDate( this ) );
+	        }),
+	      to = $( "#to" ).datepicker({
+	        defaultDate: "+1w",
+	        changeMonth: true,
+	      })
+	      .on( "change", function() {
+	        from.datepicker( "option", "maxDate", getDate( this ) );
+	      });
+	 
+	    function getDate( element ) {
+	      var date;
+	      try {
+	        date = $.datepicker.parseDate( dateFormat, element.value );
+	      } catch( error ) {
+	        date = null;
+	      }	 
+	      return date;
+	    }
+
+	    $(".amenitites .deluxe").hide();
+	    $(".amenitites .exec").hide();
+	    $(".amenitites .std").show();
+
+	    $('#type').change(function(){ 
+    		var value = $(this).children(":selected").attr("name");
+	    	$(".amenitites .deluxe").hide();
+		    $(".amenitites .exec").hide();
+    		$("." + value).show(1000);
+    		if (value == "deluxe")
+    			$("#cost").text("5000 Rs.");
+    		else if (value == "exec")
+    			$("#cost").text("3000 Rs.");
+    		if (value == "std")
+    			$("#cost").text("1000 Rs.");
+		});
+
+	    $("#closeUnav").click(function(){
+	    	console.log("#");
+	    	$(".unavailable").slideUp(500);
+	    })
+
+	  } )
+	</script>
+</body>
+</html>

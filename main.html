@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Reception</title>
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css">
+	<link rel="stylesheet" type="text/css" href="reception-main-style.css">
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+</head>
+<body>
+	<br><br><br><br><br><br>
+	<p id = "roomsList">View Room Allotments</p>
+	<br><br><br><br>
+	<p id = "checkIn">Check in a customer</p>
+	<br><br>
+	<form class = "checkInForm">
+		<input type="number" name="phone-number" placeholder="Phone Number">
+		<input type="submit" value="check In">
+	</form>
+	<br><br>
+	<p id = "checkOut">Check out a customer</p>
+	<br><br>
+	<form class = "checkOutForm">
+		<input type="number" name="phone-number" placeholder="Phone Number">
+		<input type="submit" value="check Out">
+	</form>
+	<script type="text/javascript">
+		$(function(){
+			$("#roomsList").click(function(){
+				window.open("roomsList.php",'_blank');
+			})
+			
+			$(".checkInForm").hide();
+			$(".checkOutForm").hide();
+
+			$("#checkIn").click(function(){
+				$(".checkInForm").show(500);
+				$(".checkOutForm").hide();				
+			})
+
+			$("#checkOut").click(function(){
+				$(".checkOutForm").show(500);
+				$(".checkInForm").hide();				
+			})
+		})
+	</script>
+</body>
+</html>
